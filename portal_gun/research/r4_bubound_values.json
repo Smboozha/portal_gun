@@ -1,0 +1,222 @@
+{
+  "dataset": "r4_bubound_values",
+  "constants": {
+    "hbar": 1.054571817e-34,
+    "c": 299792458.0,
+    "G": 6.6743e-11,
+    "g_earth": 9.80665,
+    "C_SI_J_m3_m4": 4.333752574825845e-28
+  },
+  "formulas": {
+    "casimir_eps": "-pi^2*hbar*c/(720*d^4)  [J/m3]",
+    "casimir_rho": "eps/c^2  [kg/m3]",
+    "m_eff": "abs(rho)*(4*pi/3)*R_b^3",
+    "r_s": "2*G*m_ext/c^2  (sign = sign of mass)",
+    "sigma_israel_stable": "(c^4/(4*pi*G))*r_s/(R^2*(1+beta))  ~ m_ext*c^2/(4*pi*R^2)",
+    "P_theta_israel_stable": "-(c^4/(8*pi*G))*(r_s/R^2)*[1/(2*beta)+1/(1+beta)] ~ -sigma",
+    "beta": "sqrt(1 - r_s/R)",
+    "a_g": "G*|m_eff|/R^2  (outward for negative mass)",
+    "needed_rho": "3*a_thr/(4*pi*G*R_b)",
+    "d_needed": "(C_SI/(rho_need*c^2))^(1/4)",
+    "adS_radius_inner": "sqrt(3*c^2/(8*pi*G*|rho|))"
+  },
+  "thresholds": {
+    "gravimetry_m_s2": 1e-06,
+    "atom_interferometer_m_s2": 1e-09
+  },
+  "branches": {
+    "A_positive_mass": {
+      "sigma": ">0",
+      "P_theta": "<0 (tension)",
+      "probe": "attractive"
+    },
+    "B_negative_mass": {
+      "sigma": "<0 exotic shell",
+      "P_theta": ">0",
+      "probe": "repulsive",
+      "used_as_primary": true
+    },
+    "C_exterior_flat_M0": {
+      "a_g": "=0 outside",
+      "sigma_volume_estimate": "abs(rho)*c^2*R/3 balancing",
+      "note": "nothing to measure by gravimetry"
+    }
+  },
+  "assumptions": {
+    "ideal_parallel_plates": true,
+    "D=3_casimir": true,
+    "interior_patch": "flat Minkowski (R_scalar=0); AdS-curvature scale listed separately",
+    "exterior_patch": "Schwarzschild with mass = sign(m_eff) regime, beta=sqrt(1-r_s/R)",
+    "shell_israel": "thin spherical shell, static, Darmois-Israel",
+    "geometric_caveat": "Casimir energy fills gap d (shell realization): rescale m_eff by 3d/R_b",
+    "sign_branch": "B (negative mass, repulsive probe) as primary, matching R4 task statement"
+  },
+  "values": [
+    {
+      "R_b_m": 0.1,
+      "d_m": 1e-06,
+      "rho_kg_m3": -4.821950045302491e-21,
+      "m_eff_kg": 2.0198137117732368e-23,
+      "r_s_m": -2.9998920674783017e-50,
+      "rs_over_Rb": 2.9998920674783015e-49,
+      "sigma_B_J_m2": -1.444584191608615e-05,
+      "sigma_A_J_m2": 1.444584191608615e-05,
+      "P_theta_B_J_m2": 1.4445841916086152e-05,
+      "P_over_sigma_B": -1.0000000000000002,
+      "R_curv_adS_m": 1.8257747020572392e+23,
+      "R_embed_boundary_m": 0.05,
+      "a_g_m_s2": 1.348084265648811e-31,
+      "a_g_over_g": 1.374663382142537e-32,
+      "verdict": "фантастика (< 1e-9 м/с²)"
+    },
+    {
+      "R_b_m": 0.1,
+      "d_m": 1e-05,
+      "rho_kg_m3": -4.821950045302487e-25,
+      "m_eff_kg": 2.0198137117732354e-27,
+      "r_s_m": -2.9998920674783e-54,
+      "rs_over_Rb": 2.9998920674782996e-53,
+      "sigma_B_J_m2": -1.444584191608614e-09,
+      "sigma_A_J_m2": 1.444584191608614e-09,
+      "P_theta_B_J_m2": 1.4445841916086143e-09,
+      "P_over_sigma_B": -1.0000000000000002,
+      "R_curv_adS_m": 1.82577470205724e+25,
+      "R_embed_boundary_m": 0.05,
+      "a_g_m_s2": 1.34808426564881e-35,
+      "a_g_over_g": 1.374663382142536e-36,
+      "verdict": "фантастика (< 1e-9 м/с²)"
+    },
+    {
+      "R_b_m": 0.1,
+      "d_m": 0.0001,
+      "rho_kg_m3": -4.8219500453024883e-29,
+      "m_eff_kg": 2.019813711773236e-31,
+      "r_s_m": -2.9998920674783014e-58,
+      "rs_over_Rb": 2.999892067478301e-57,
+      "sigma_B_J_m2": -1.4445841916086147e-13,
+      "sigma_A_J_m2": 1.4445841916086147e-13,
+      "P_theta_B_J_m2": 1.4445841916086147e-13,
+      "P_over_sigma_B": -1.0,
+      "R_curv_adS_m": 1.8257747020572398e+27,
+      "R_embed_boundary_m": 0.05,
+      "a_g_m_s2": 1.3480842656488107e-39,
+      "a_g_over_g": 1.3746633821425366e-40,
+      "verdict": "фантастика (< 1e-9 м/с²)"
+    },
+    {
+      "R_b_m": 1.0,
+      "d_m": 1e-06,
+      "rho_kg_m3": -4.821950045302491e-21,
+      "m_eff_kg": 2.0198137117732364e-20,
+      "r_s_m": -2.9998920674783015e-47,
+      "rs_over_Rb": 2.9998920674783015e-47,
+      "sigma_B_J_m2": -0.00014445841916086152,
+      "sigma_A_J_m2": 0.00014445841916086152,
+      "P_theta_B_J_m2": 0.00014445841916086152,
+      "P_over_sigma_B": -1.0,
+      "R_curv_adS_m": 1.8257747020572392e+23,
+      "R_embed_boundary_m": 0.5,
+      "a_g_m_s2": 1.3480842656488111e-30,
+      "a_g_over_g": 1.3746633821425372e-31,
+      "verdict": "фантастика (< 1e-9 м/с²)"
+    },
+    {
+      "R_b_m": 1.0,
+      "d_m": 1e-05,
+      "rho_kg_m3": -4.821950045302487e-25,
+      "m_eff_kg": 2.019813711773235e-24,
+      "r_s_m": -2.9998920674783e-51,
+      "rs_over_Rb": 2.9998920674783e-51,
+      "sigma_B_J_m2": -1.4445841916086143e-08,
+      "sigma_A_J_m2": 1.4445841916086143e-08,
+      "P_theta_B_J_m2": 1.4445841916086143e-08,
+      "P_over_sigma_B": -1.0,
+      "R_curv_adS_m": 1.82577470205724e+25,
+      "R_embed_boundary_m": 0.5,
+      "a_g_m_s2": 1.3480842656488102e-34,
+      "a_g_over_g": 1.3746633821425363e-35,
+      "verdict": "фантастика (< 1e-9 м/с²)"
+    },
+    {
+      "R_b_m": 1.0,
+      "d_m": 0.0001,
+      "rho_kg_m3": -4.8219500453024883e-29,
+      "m_eff_kg": 2.0198137117732356e-28,
+      "r_s_m": -2.9998920674783002e-55,
+      "rs_over_Rb": 2.9998920674783002e-55,
+      "sigma_B_J_m2": -1.4445841916086145e-12,
+      "sigma_A_J_m2": 1.4445841916086145e-12,
+      "P_theta_B_J_m2": 1.4445841916086145e-12,
+      "P_over_sigma_B": -1.0,
+      "R_curv_adS_m": 1.8257747020572398e+27,
+      "R_embed_boundary_m": 0.5,
+      "a_g_m_s2": 1.3480842656488105e-38,
+      "a_g_over_g": 1.3746633821425365e-39,
+      "verdict": "фантастика (< 1e-9 м/с²)"
+    },
+    {
+      "R_b_m": 10.0,
+      "d_m": 1e-06,
+      "rho_kg_m3": -4.821950045302491e-21,
+      "m_eff_kg": 2.0198137117732365e-17,
+      "r_s_m": -2.9998920674783016e-44,
+      "rs_over_Rb": 2.9998920674783017e-45,
+      "sigma_B_J_m2": -0.0014445841916086153,
+      "sigma_A_J_m2": 0.0014445841916086153,
+      "P_theta_B_J_m2": 0.001444584191608615,
+      "P_over_sigma_B": -0.9999999999999999,
+      "R_curv_adS_m": 1.8257747020572392e+23,
+      "R_embed_boundary_m": 5.0,
+      "a_g_m_s2": 1.3480842656488111e-29,
+      "a_g_over_g": 1.3746633821425372e-30,
+      "verdict": "фантастика (< 1e-9 м/с²)"
+    },
+    {
+      "R_b_m": 10.0,
+      "d_m": 1e-05,
+      "rho_kg_m3": -4.821950045302487e-25,
+      "m_eff_kg": 2.019813711773235e-21,
+      "r_s_m": -2.999892067478299e-48,
+      "rs_over_Rb": 2.999892067478299e-49,
+      "sigma_B_J_m2": -1.444584191608614e-07,
+      "sigma_A_J_m2": 1.444584191608614e-07,
+      "P_theta_B_J_m2": 1.444584191608614e-07,
+      "P_over_sigma_B": -1.0,
+      "R_curv_adS_m": 1.82577470205724e+25,
+      "R_embed_boundary_m": 5.0,
+      "a_g_m_s2": 1.34808426564881e-33,
+      "a_g_over_g": 1.374663382142536e-34,
+      "verdict": "фантастика (< 1e-9 м/с²)"
+    },
+    {
+      "R_b_m": 10.0,
+      "d_m": 0.0001,
+      "rho_kg_m3": -4.8219500453024883e-29,
+      "m_eff_kg": 2.0198137117732356e-25,
+      "r_s_m": -2.9998920674783e-52,
+      "rs_over_Rb": 2.9998920674783e-53,
+      "sigma_B_J_m2": -1.4445841916086144e-11,
+      "sigma_A_J_m2": 1.4445841916086144e-11,
+      "P_theta_B_J_m2": 1.4445841916086144e-11,
+      "P_over_sigma_B": -1.0,
+      "R_curv_adS_m": 1.8257747020572398e+27,
+      "R_embed_boundary_m": 5.0,
+      "a_g_m_s2": 1.3480842656488105e-37,
+      "a_g_over_g": 1.3746633821425367e-38,
+      "verdict": "фантастика (< 1e-9 м/с²)"
+    }
+  ],
+  "recommendation": {
+    "measurable_config": "НЕТ в сетке R_b=0.1..10 м × d=1..100 мкм",
+    "max_a_g_m_s2": 1.3480842656488111e-29,
+    "closest_config": {
+      "R_b_m": 10.0,
+      "d_m": 1e-06
+    },
+    "verdict_all": "фантастика",
+    "reason": "a_g = 1.35e-40..1.35e-29 м/с² на сетке, т.е. в 1e23..1e33 раз ниже порога гравиметрии 1e-6 м/с²; даже |ρ|_need=358..3.58e4 кг/м³ (плотность воды и выше!) требует зазор d_need~0.6..2 пм (атомный/ядерный масштаб), где теория Казимира и сама идея пластин не работают",
+    "gap_rho": "×1e22..×1e32",
+    "note_negative_mass": "масса отрицательна ⇒ ускорение пробного тела направлено наружу (отталкивание, антигравитация); скаляр |a_g| приведён в таблице",
+    "note_exterior_flat": "при строго Minkowski-снаружи (M_ext=0) внешнее поле обнуляется, a_g=0 снаружи — ничего не измерить гравиметрией"
+  }
+}

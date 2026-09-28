@@ -1,0 +1,60 @@
+{
+  "file": "r3_qi_modulated_a2",
+  "agent": "R3-АГЕНТ-2-ФИЗИКА-ОГРАНИЧЕНИЙ",
+  "scenario": "modulated_duty_cycle",
+  "FR_QI_formula": {
+    "source": "Ford & Roman, PRD 53 (1996) 5496",
+    "integral_form": "(tau0/pi) * int <T_mu nu u^mu u^nu>/(t^2+tau0^2) dt >= -3*hbar/(32*pi^2*c^3*tau0^4)",
+    "local_limit": "|epsilon|_max = 3*hbar/(32*pi^2*c^3*tau^4) [J/m^3]"
+  },
+  "modulation_params": {
+    "tau_on_s": 1e-06,
+    "T_cycle_s": 0.001,
+    "f_duty": 0.001,
+    "frequency_Hz": 1000.0,
+    "tau_on_label": "1 us",
+    "T_cycle_label": "1 ms"
+  },
+  "rho_need_from_ft": {
+    "model": "f(T) = T + alpha*T^2 + gamma*T^-1",
+    "alpha": -0.1,
+    "gamma": -0.01,
+    "r0_m": 0.1,
+    "rho_th_dim_4piR0sq": 0.7200000000000001,
+    "rho_SI_J_per_m3": 3.4671267984401445e+44,
+    "abs_rho_SI": 3.4671267984401445e+44
+  },
+  "case_a_tau0_eq_tau_on": {
+    "tau0_s": 1e-06,
+    "eps_FR_max_J_per_m3": 3.7177962329681477e-38,
+    "rho_used": 3.4671267984401445e+44,
+    "rho_type": "peak (full amplitude during ON time)",
+    "ratio": 9.325758006032842e+81,
+    "log10_violation": 81.96968414176311,
+    "violated": true,
+    "orders_of_violation": 81.96968414176311
+  },
+  "case_b_tau0_eq_T_cycle": {
+    "tau0_s": 0.001,
+    "eps_FR_max_J_per_m3": 3.7177962329681458e-50,
+    "rho_avg_J_per_m3": 3.4671267984401447e+41,
+    "rho_type": "average over full cycle",
+    "ratio": 9.325758006032847e+90,
+    "log10_violation": 90.96968414176311,
+    "violated": true,
+    "orders_of_violation": 90.96968414176311
+  },
+  "scaling_analysis": {
+    "bound_scale_factor": 1.0000000000000002e-12,
+    "average_density_scale_factor": 0.001,
+    "ratio_scale_factor": 999999999.9999999,
+    "interpretation": "Bound decreases as tau^{-4} = f^4, but average density decreases only as f. Net effect: ratio grows by f^{-3} = 1e9 when going from case (a) to case (b). Duty cycle makes violation WORSE, not better."
+  },
+  "verdict": {
+    "modulation_bypasses_QI": false,
+    "case_a_violation_orders": 81.96968414176311,
+    "case_b_violation_orders": 90.96968414176311,
+    "verdict_text": "Duty-cycle modulation does NOT bypass FR-QI. Case (a): ~82 orders violation (same as static pulse). Case (b): ~91 orders violation (WORSE due to tau^-4 scaling). Time modulation does not bypass QI for instantaneous local energy density measure.",
+    "physical_fact": "FR-QI applies to the light tube covering any random moment of pulse switch-on. Duty-cycle adds empty periods but does not reduce peak density during ON time. Literature: temporal modulation does NOT bypass QI for instantaneous measures."
+  }
+}

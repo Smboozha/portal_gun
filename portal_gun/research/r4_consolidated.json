@@ -1,0 +1,209 @@
+{
+  "title": "R4 consolidated NEC/WEC scan, Casimir bubble in f(T)",
+  "r0": "0.10 m (10 см)",
+  "units": "4pi*r0^2 * X",
+  "topology_sign": {
+    "sphere": "+ (repulsive, NOT supporting)",
+    "cylinder": "- (DeRaad-Milton 1981)",
+    "torus": "- (Balian-Duplantier via A3; C=-0.11..-0.56)",
+    "bubble": "- (plates-scale rho<0)"
+  },
+  "source_rho_4pir02": [
+    {
+      "form": "plates",
+      "sign": "-",
+      "rho": -1.1309326656902547e-47,
+      "pr": -3.3927979970707637e-47,
+      "pt": 1.1309326656902547e-47,
+      "note": "идеальные плоские пластины; ρ<0, натяжение по нормали p_r=3ρ<0; танген",
+      "formula": "ε = −π²ħc/(720 d⁴)  (d = x·r0)"
+    },
+    {
+      "form": "torus",
+      "sign": "-",
+      "rho": -1.8094922651044082e-54,
+      "pr": -6.0316408836813616e-55,
+      "pt": -6.0316408836813616e-55,
+      "note": "топологический тор: ОДНО компактное (периодическое) направление длины ",
+      "formula": "ε = −π²ħc/(45 L⁴)  (L = x·r0, PBC, = 16·пластин)"
+    },
+    {
+      "form": "bubble",
+      "sign": "-",
+      "rho": -1.1309326656902556e-47,
+      "pr": -3.7697755523008523e-48,
+      "pt": -3.7697755523008523e-48,
+      "note": "лабораторный «пузырь» r4_bubound: объём 4π/3·R_b³ заполнен Казимировск",
+      "formula": "ε = −π²ħc/(720 d_m⁴), E = ε·(4π/3)R_b³  (R_b = x·r0)"
+    },
+    {
+      "form": "sphere",
+      "sign": "+",
+      "rho": 9.094993066746433e-68,
+      "pr": 3.0316643555821446e-68,
+      "pt": 3.0316643555821446e-68,
+      "note": "проводящая сферическая оболочка (Boyer 1968, Milton 1980): САМОЭНЕРГИЯ",
+      "formula": "ε = +0.0923531·ħc/(2R·(4π/3)R³)  (R = x·r0)"
+    }
+  ],
+  "DCE": "linear mod averages to static; adiabatic adds +O(eps^2); real DCE needs cm-scale gaps",
+  "nec_quad": [
+    {
+      "alpha": "-5",
+      "rho": 54.5,
+      "pr": 4.5,
+      "pt": -34.5,
+      "nec_r": true,
+      "nec_t": true,
+      "tau_ratio": 0.21884084230567558,
+      "q_torsion": 110.0,
+      "qi_state": "QI off (экзот. из геом.)"
+    },
+    {
+      "alpha": "-3",
+      "rho": 32.5,
+      "pr": 2.5,
+      "pt": -20.5,
+      "nec_r": true,
+      "nec_t": true,
+      "tau_ratio": 0.24903286388467732,
+      "q_torsion": 66.0,
+      "qi_state": "QI off (экзот. из геом.)"
+    },
+    {
+      "alpha": "-2",
+      "rho": 21.5,
+      "pr": 1.5,
+      "pt": -13.5,
+      "nec_r": true,
+      "nec_t": true,
+      "tau_ratio": 0.2761327310666056,
+      "q_torsion": 44.0,
+      "qi_state": "QI off (экзот. из геом.)"
+    },
+    {
+      "alpha": "-1.5",
+      "rho": 16.0,
+      "pr": 1.0,
+      "pt": -10.0,
+      "nec_r": true,
+      "nec_t": true,
+      "tau_ratio": 0.29730177875068026,
+      "q_torsion": 33.0,
+      "qi_state": "QI off (экзот. из геом.)"
+    },
+    {
+      "alpha": "-1",
+      "rho": 10.5,
+      "pr": 0.5,
+      "pt": -6.5,
+      "nec_r": true,
+      "nec_t": true,
+      "tau_ratio": 0.3303164318013807,
+      "q_torsion": 22.0,
+      "qi_state": "QI off (экзот. из геом.)"
+    },
+    {
+      "alpha": "-0.75",
+      "rho": 7.75,
+      "pr": 0.25,
+      "pt": -4.75,
+      "nec_r": true,
+      "nec_t": true,
+      "tau_ratio": 0.3563707718096288,
+      "q_torsion": 16.5,
+      "qi_state": "QI off (экзот. из геом.)"
+    },
+    {
+      "alpha": "-0.5",
+      "rho": 5.0,
+      "pr": 0.0,
+      "pt": -3.0,
+      "nec_r": true,
+      "nec_t": true,
+      "tau_ratio": 0.3976353643835253,
+      "q_torsion": 11.0,
+      "qi_state": "QI off (экзот. из геом.)"
+    },
+    {
+      "alpha": "-0.25",
+      "rho": 2.25,
+      "pr": -0.25,
+      "pt": -1.25,
+      "nec_r": true,
+      "nec_t": true,
+      "tau_ratio": 0.48549177170732344,
+      "q_torsion": 5.5,
+      "qi_state": "QI off (экзот. из геом.)"
+    },
+    {
+      "alpha": "-0.1",
+      "rho": 0.6,
+      "pr": -0.4,
+      "pt": -0.2,
+      "nec_r": true,
+      "nec_t": true,
+      "tau_ratio": 0.6756000774035172,
+      "q_torsion": 2.2,
+      "qi_state": "QI off (экзот. из геом.)"
+    },
+    {
+      "alpha": "0",
+      "rho": -0.5,
+      "pr": -0.5,
+      "pt": 0.5,
+      "nec_r": false,
+      "nec_t": true,
+      "tau_ratio": 1.0,
+      "q_torsion": 0.0,
+      "qi_state": "QI on (α>0: хуже GR)"
+    },
+    {
+      "alpha": "0.1",
+      "rho": -1.6,
+      "pr": -0.6,
+      "pt": 1.2,
+      "nec_r": false,
+      "nec_t": false,
+      "tau_ratio": 0.7476743906106103,
+      "q_torsion": -2.2,
+      "qi_state": "QI on (α>0: хуже GR)"
+    },
+    {
+      "alpha": "0.25",
+      "rho": -3.25,
+      "pr": -0.75,
+      "pt": 2.25,
+      "nec_r": false,
+      "nec_t": false,
+      "tau_ratio": 0.6262844962765469,
+      "q_torsion": -5.5,
+      "qi_state": "QI on (α>0: хуже GR)"
+    },
+    {
+      "alpha": "0.5",
+      "rho": -6.0,
+      "pr": -1.0,
+      "pt": 4.0,
+      "nec_r": false,
+      "nec_t": false,
+      "tau_ratio": 0.537284965911771,
+      "q_torsion": -11.0,
+      "qi_state": "QI on (α>0: хуже GR)"
+    },
+    {
+      "alpha": "1",
+      "rho": -11.5,
+      "pr": -1.5,
+      "pt": 7.5,
+      "nec_r": false,
+      "nec_t": false,
+      "tau_ratio": 0.4566337854967312,
+      "q_torsion": -22.0,
+      "qi_state": "QI on (α>0: хуже GR)"
+    }
+  ],
+  "QI": "not nullified; q=-22*alpha; alive for alpha<-1/22; GR unviable",
+  "boundary": "all fantastic; a_g<<1e-6; need pm gaps",
+  "verdict": "NEC/WEC locally OK (alpha<0); QI dormant (torsion); topology: torus/bubble support; BUT lab-detectable signal: NO"
+}

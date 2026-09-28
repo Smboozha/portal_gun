@@ -1,0 +1,64 @@
+{
+  "dataset": "r4_qi_ft_values",
+  "constants": {
+    "hbar": 1.054571817e-34,
+    "c": 299792458.0,
+    "G": 6.6743e-11,
+    "r0": 0.1,
+    "t_r0": 3.3356409519815207e-10
+  },
+  "qi_formula": "rho>=-3/(32*pi^2*tau^4)  [c=hbar=1]; SI: rho>=-3*hbar/(32*pi^2*c^5*tau^4) kg/m3; r0: 4pi*r0^2*rho_bar>=-C_QI/tau_bar^4, C_QI=3.118e-69",
+  "casimir": "|eps|=pi^2*hbar*c/(720*d^4); R_QI=1.4431*(c*tau/d)^4",
+  "torsion": "q=1-rho_req/rho_GR (BHL good-tetrad); tau_avail=tau_FR*(1-q)^-1/4",
+  "honest_gap": "QI strictly derived for flat Minkowski; local-flat approx; breathing scalar mode can tighten bound (upper estimate)",
+  "tau_FR_days": [
+    3.0433742910406553e-16,
+    3.0433742910406555e-15,
+    3.043374291040655e-14
+  ],
+  "throat_GR": {
+    "4pi_r0^2_rho": -0.5,
+    "rho_kg_m3": 5.357915036985317e+27,
+    "eps_J_m3": 4.815453886722422e+44,
+    "tau_QI_s": 2.9642312992352545e-27
+  },
+  "family_scan": [
+    {
+      "alpha": 0.0,
+      "q_throat": 0.0,
+      "life_factor_omega__c_over_d": 1.4430976449481838,
+      "tau_avail_1um": 3.0433742910406555e-15
+    },
+    {
+      "alpha": -0.01,
+      "q_throat": 0.21999999999999997,
+      "life_factor_omega__c_over_d": 1.1256161630595833,
+      "tau_avail_1um": 3.2384091425833063e-15
+    },
+    {
+      "alpha": -0.02,
+      "q_throat": 0.43999999999999995,
+      "life_factor_omega__c_over_d": 0.808134681170983,
+      "tau_avail_1um": 3.5181014659282726e-15
+    },
+    {
+      "alpha": -0.04,
+      "q_throat": 0.88,
+      "life_factor_omega__c_over_d": 0.17317171739378207,
+      "tau_avail_1um": 5.1708275741083175e-15
+    },
+    {
+      "alpha": -0.045454545454545456,
+      "q_throat": 1.0,
+      "life_factor_omega__c_over_d": 0.0,
+      "tau_avail_1um": Infinity
+    },
+    {
+      "alpha": -1.0,
+      "q_throat": 22.0,
+      "life_factor_omega__c_over_d": 0.0,
+      "tau_avail_1um": Infinity
+    }
+  ],
+  "recommendation": "lab Casimir d~0.1-10 um QI-lifetime ~1e-16..1e-14 s, viable at natural probe only if quad alpha<=-0.02 (q>=0.44); alpha<=-1/22 (q=1) removes exotic requirement entirely; GR wormhole exoticity unviable (tau~1e-27 s)."
+}

@@ -1,0 +1,68 @@
+{
+  "dataset": "r3_spinsphere_a4",
+  "sphere": {
+    "R_s_m": 0.1,
+    "sigma_Mpa": 150.0,
+    "rho_kg_m3": 8908.0,
+    "E_max_V_m": 10000000.0,
+    "omega_max_rad_s": 1297.6438874875196,
+    "f_max_Hz": 206.52643906662203
+  },
+  "magnetic_field": {
+    "model_charged_ball": {
+      "Q_max_C": 1.1126500554478707e-05,
+      "N_e": 69446154177771.56,
+      "B_center_at_omega_max_T": 9.625490289097193e-09,
+      "B_center_at_1000_T": 7.417667036319138e-09,
+      "formula": "B_c=mu0*Q*Omega/(6*pi*R)",
+      "note": "VERHNYI PREDEL; S/C ekraniruet zaryad (Meissner) -> ne realizuem"
+    },
+    "model_london": {
+      "B_london_at_omega_max_T": 1.4755846300814188e-08,
+      "B_london_at_1000_T": 1.1371260207131447e-08,
+      "B_london_nT": 14.755846300814188,
+      "formula": "B_L=(2*m_e/e)*Omega",
+      "note": "FIZICHESKII kanal dlya S/C; nezavisit ot Q"
+    },
+    "summary": {
+      "B_phys_T": 1.4755846300814188e-08,
+      "scale": "~1e-8 T (uroven' geomagnitnogo polya)"
+    }
+  },
+  "torsion": {
+    "T0_crit_m2": -4.545454545454545,
+    "alpha_crit": -0.045454545454545456,
+    "scenario_a_omega2_c2": {
+      "T_rot_at_omega_max_m2": 1.873568796677624e-11,
+      "T_rot_at_1000_m2": 1.1126500560536185e-11,
+      "orders_below_Tcrit": 11.384907674339969,
+      "formula": "T=Omega^2/c^2"
+    },
+    "scenario_b_lense_thirring": {
+      "M_kg": 37.31374314423718,
+      "J_at_omega_max": 193.67980284159492,
+      "Omega_LT_at_omega_max": 1.4382972567929883e-22,
+      "T_rot_at_omega_max_m2": 2.301738057082186e-61,
+      "orders_below_Tcrit": 61.29552142075136,
+      "formula": "Omega_LT=GJ/(c^2 R^3), T=(Omega_LT/c)^2"
+    },
+    "omega_needed_for_Tcrit": {
+      "scenario_a_rad_s": 639159668.0360925,
+      "scenario_b_rad_s": 5.766552306474725e+33,
+      "omega_max_rad_s": 1297.6438874875196,
+      "impossible_by_orders_a": 5.692453837169984,
+      "impossible_by_orders_b": 30.64776071037568
+    },
+    "sign": {
+      "T_rot": "positive",
+      "T0_crit": "negative",
+      "mismatch": true
+    }
+  },
+  "verdict_final": "NET. Vrashchayushchiysya sverkhprovodnik daet B~1e-8 Tl (London) i torsion ~1e-11 m^-2 (scen.a Omega^2/c^2) ili ~1e-61 m^-2 (scen.b LT). Nehvatka vs T0_crit: ~11.4 poryadkov (a), ~61.3 poryadkov (b). Znak: T_rot>0, nuzhen T0_crit<0. B-dlya-torsion svyazi net. Skhema K RABOCHEMU PORTALU NE SKHODITSYA.",
+  "prior_verdicts": [
+    "r3_ring_cartridge.py: EM-koltso torsion NE sozdaet",
+    "r3_plasma_vortex_a4.py: plazmennyi vikhr' torsion NE sozdaet",
+    "r3_spinsphere_a4.py: vrashchayushchiysya S/C torsion NE sozdaet"
+  ]
+}

@@ -1,0 +1,96 @@
+{
+  "dataset": "r3_plasma_vortex_a4",
+  "toroid": {
+    "R_t_m": 0.05,
+    "a_w_m": 0.01,
+    "I_A": 100.0,
+    "V_source_kV": 50.0,
+    "f_MHz": 1.0,
+    "omega_rad_s": 6283185.307179586,
+    "sigma_S_m": 10000.0,
+    "n_e_m3": 1e+16
+  },
+  "magnetic_field": {
+    "B_phi_T": 0.0004000000000000001,
+    "B_phi_mT": 0.4000000000000001,
+    "formula": "mu0*I/(2*pi*R_t)"
+  },
+  "inductance": {
+    "L_H": 1.218233889848106e-07,
+    "L_nH": 121.8233889848106,
+    "formula": "mu0*R_t*(ln(8R_t/a_w)-2+1/4)",
+    "ln_term": 3.6888794541139363
+  },
+  "energy": {
+    "E_mag_J": 0.000609116944924053,
+    "E_mag_mJ": 0.609116944924053,
+    "m_eq_kg": 6.777340029129564e-21,
+    "r_s_m": 1.0065922650925901e-47
+  },
+  "pressure": {
+    "p_B_Pa": 0.06366197723675816,
+    "p_B_atm": 6.282948654010181e-07,
+    "p_B_bar": 6.366197723675816e-07
+  },
+  "skin_depth": {
+    "delta_m": 0.005032921210448704,
+    "delta_mm": 5.032921210448704,
+    "delta_over_a_w": 0.5032921210448703,
+    "formula": "sqrt(2/(mu0*sigma*omega))"
+  },
+  "radiation": {
+    "P_rad_W": 2.3787339353745094e-06,
+    "P_rad_uW": 2.3787339353745094,
+    "m_dipole_A_m2": 0.7853981633974485,
+    "formula": "mu0*omega^4*m^2/(6*pi*c^3)",
+    "P_rad_over_P_Ohmic": 1.4927100623059297e-15
+  },
+  "plasma": {
+    "omega_pe_rad_s": 5641460231.180627,
+    "f_pe_GHz": 0.8978662820487434,
+    "omega_over_omega_pe": 0.0011137515908473685,
+    "E_ring_V_m": 159154.94309189534,
+    "E_eff_V_m": 80101.42888349564,
+    "j_DC_A_m2": 1591549430.9189534,
+    "p_density_AC_W_m3": 32081194545888.547,
+    "P_total_AC_W": 1593567294.441531,
+    "T_plasma_K": 52473.28075670159,
+    "T_plasma_eV": 4.521797476386071,
+    "T_Spitzer_eV": 4.521797476386071,
+    "T_RF_eV": 4.521797476386071,
+    "nu_en_1_s": 28179.403246707876
+  },
+  "energy_densities": {
+    "u_B_J_m3": 0.06366197723675816,
+    "u_E_J_m3": 0.11213959867305724,
+    "u_total_J_m3": 0.1758015759098154
+  },
+  "torsion_hypothesis": {
+    "label": "[POSTULAT] T0 = B*(e/hbar)",
+    "T0_hypothesis_m2": 607706979523.8043,
+    "alpha_hypothesis": 6077069795.238045,
+    "T0_crit_m2": -4.545454545454545,
+    "alpha_crit": -0.045454545454545456,
+    "ratio_abs_T0_hyp_over_T0_crit": 133695535495.23697,
+    "sign_T0_hyp": "positive",
+    "sign_T0_crit": "negative",
+    "sign_mismatch": true,
+    "verdict": "ZAPRESHCHENO: alpha>0 → q<0 → ushchestochet QI; |T0_hyp|/|T0_crit| ~ 3.5e16 (nevernyi znak + nevernyi masshtab)"
+  },
+  "exotic_energy": {
+    "rho_exotic_needed_J_m3": 2709765666.4691997,
+    "rho_exotic_kg_m3": 3.015020920689126e-08,
+    "u_B_over_rho_exotic": 2.349353600000001e-11,
+    "orders_of_magnitude_gap": 10.629051612864108
+  },
+  "verdict_final": "NEVOZMOZHNO. Glavnye ubiitsy: (1) mekhanizm T_mu(EM)→torsion NEUSTANOVLEN (TEGR: torsion=fermionic spin, ne T_mu); (2) poriadok razryva ~11 poryadkov (u_B~6.4e-02 Dzh/m3 vs rho_exotic~2.7e+09 Dzh/m3); (3) nevernyi znak (T0_hyp>0, T0_crit<0 → QI ushchestochaetsia). Plazmennyi vikhr' = tot zhe EM-istochnik, chto i koltso (slabee v 30x).",
+  "ring_comparison": {
+    "B_phi_plasma_mT": 0.4000000000000001,
+    "B0_ring_mT": 12.566,
+    "ratio_B": 0.03183192742320548,
+    "E_mag_plasma_mJ": 0.609116944924053,
+    "E_mag_ring_mJ": 125.4,
+    "ratio_E": 0.004857391905295478,
+    "note": "Plasma vortex E_mag in ~100x less than superconducting ring; B in ~30x less"
+  }
+}

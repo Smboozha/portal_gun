@@ -1,0 +1,57 @@
+{
+  "dataset": "r3_ring_cartridge",
+  "ring": {
+    "R_m": 0.05,
+    "I_A": 1000.0,
+    "a_w_m": 0.001
+  },
+  "B0_T": 0.012566370614359171,
+  "B_on_axis": {
+    "0.0": 0.012566370614359171,
+    "0.05": 0.004442882938158366,
+    "0.1": 0.001123970356966516,
+    "0.2": 0.0001792819147877535,
+    "0.5": 1.2380204066583495e-05
+  },
+  "L_H": 2.507911139651709e-07,
+  "E_mag_J": 0.12539555698258545,
+  "p_B_Pa": 62.83185307179585,
+  "p_B_atm": 0.0006201021768743731,
+  "YBCO": {
+    "T_c_K": 92.0,
+    "T_op_K": 77.0,
+    "B_c2_77K_T": 1.5,
+    "J_c_typical_A_cm2": 3000.0,
+    "J_c_optimistic_A_cm2": 10000.0,
+    "A_min_typical_mm2": 3333.333333333333,
+    "A_min_optimistic_mm2": 1000.0,
+    "verdict": "realizuem kak stаck parallellnykh YBCO-lent; B<<B_c2, glubokii SC-rezhim"
+  },
+  "flux": {
+    "Phi_Wb": 9.869604401089358e-05,
+    "Phi0_h2e_Wb": 2.0678338484619295e-15,
+    "Phi0_hbar2e_Wb": 3.2910597827380374e-16,
+    "N_fluxoid_h2e": 47729194530.93606,
+    "N_hbar2e": 299891373984.0429,
+    "phase_AB_rad": 149945686992.02145,
+    "phase_AB_times_2pi": 299891373984.0429,
+    "note": "fizicheskii fluxoid = h/2e = 2.07e-15 Wb; variant zadaniya 'hbar/2e' est' fakticheski h/2e (oshibka 2pi); N(h2e)=4.77e10, N(hbar2e)=2.999e11"
+  },
+  "gravitational": {
+    "m_eq_kg": 1.395213735055484e-18,
+    "r_s_m": 2.0722161612395382e-45,
+    "r_s_over_R": 4.1444323224790764e-44,
+    "verdict": "Schwarzschild-korrektciia EST' no ~10^-42 ot R, nerelevantna"
+  },
+  "torsion_hypothesis": {
+    "label": "[POSTULAT] T0 = B*(e/hbar)",
+    "T0_hypothesis_m2": 19091677824072.258,
+    "alpha_hypothesis": 190916778240.72263,
+    "T0_crit_m2": -4.545454545454545,
+    "alpha_crit": -0.045454545454545456,
+    "ratio_T0_hyp_over_T0_crit": 4200169121295.897,
+    "sign_mismatch": true,
+    "verdict": "ZAPRESHCHENO: alpha>0 → q<0 → ushchestochet QI vmesto sniatiia; |T0_hyp|/|T0_crit| ~ 4.2e12 (nevernyi znak + nevernyi masshtab)"
+  },
+  "verdict_final": "UDERZHANIE GORLOVINY MAGNITNYM KOLTSOM: NE DOKAZANO. Mag. pole sozdaet kriviznu (Schwarzschild ~ 4e-44 ot R), a NE torsion. Mekhanizm 'tok → torsion' neustanovlen; gipoteza T0=B*(e/hbar) zapreshchena znakom (alpha>0) i masshtabom (~4.2e12). Dlya f(T)-garpunirovaniia nuzhen OTDELNYI istochnik T0<0."
+}
